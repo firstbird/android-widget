@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Put initial data into the word list.
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             // Original code: mWordList.addLast("Word " + i)
             mWordList.addLast(String.format(getResources().getString(R.string
                     .word), i));

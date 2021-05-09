@@ -17,6 +17,7 @@
 package com.example.android.recyclerview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +37,8 @@ public class WordListAdapter
 
     private final LinkedList<String> mWordList;
     private final LayoutInflater mInflater;
+
+    private Context mContext;
 
     class WordViewHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
@@ -66,11 +69,13 @@ public class WordListAdapter
             String clickOutput = v.getContext().getString(clicked) +
                     wordItemView.getText();
             wordItemView.setText(clickOutput);
+            mContext.startActivity(new Intent(mContext, ListViewActivity.class));
         }
     }
 
     public WordListAdapter(Context context, LinkedList<String> wordList) {
         mInflater = LayoutInflater.from(context);
+        mContext = context;
         this.mWordList = wordList;
     }
 
